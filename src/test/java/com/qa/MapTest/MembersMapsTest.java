@@ -1,4 +1,4 @@
-package com.qa.MapTests;
+package com.qa.MapTest;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -40,6 +40,12 @@ public class MembersMapsTest{
 		mmr.getmembersMap().put(1, mem1);
 		mmr.updateMember(1, "{\"memberid\":1,\"firstname\":\"Jack\",\"lastname\":\"Ryan\"}");
 		assertEquals("Jack", mmr.getmembersMap().get(1).getFirstname());
+	}
+	
+	@Test
+	public void findMember() {
+		mmr.getmembersMap().put(1, mem1);
+		assertEquals("Krystal Ryan",mmr.findMember(1));
 	}
 	
 	@Ignore

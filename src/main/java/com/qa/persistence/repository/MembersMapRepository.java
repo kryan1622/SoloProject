@@ -25,8 +25,14 @@ public class MembersMapRepository implements MembersRepository{
 		return j1.getJSONForObject(membersMap.values());
 	}
 	
-	public String findAccount(int memberid) {
-		return j1.getJSONForObject(membersMap.get(memberid));
+	public String findMember(int memberid) {
+		Members member = getmembersMap().get(memberid);
+		if (getmembersMap().containsKey(memberid) != false){
+		return member.toString();	
+		}
+		else {
+			return "User does not exist";
+		}
 		}
 	
 	public String updateMember(int memberid, String Member) {
